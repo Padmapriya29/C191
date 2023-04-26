@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+    <title>Virtual Reality Car Drive Stimulation</title>
+</head>
+
+<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+<script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+<script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js" crossorigin="anonymous"></script>
+<script src="./drive.js"></script>
+
+<body>
+    <a-scene id="scene" inspector-plugin-recast background="color:beige;">
+    <a-assets>
+        <a-asset-item id="city" src="./assets/low_poly_city/scene.gltf"></a-asset-item>
+        <a-asset-item id="wheel" src="./assets/steering_wheel/scene.gltf"></a-asset-item>
+    </a-assets>
+
+    <a-entity id="citySet" gltf-model="#city" position="10 -2 -150" rotation="0 90 0" scale="1 1 1"></a-entity>
+
+    <a-box id="b1" material="height:400;" color="red" geometry="depth:400; height:50; width:5;" position="-76.79 -8.30 -164.16"></a-box>
+    <a-box id="b2" material="height:400;" color="red" geometry="depth:400; height:50; width:5;" position="75.38 -8.30 -164.16"></a-box>
+    <a-box id="b3" material="height:400;" color="red" geometry="depth:5; height:50; width:200;" position="-0.33 -7.84 -359.48"></a-box>
+    <a-box id="b4" material="height:400;" color="red" geometry="depth:5; height:50; width:200;" position="0.33 -7.84 31.16"></a-box>
+
+    <a-entity id="steeringWheel" gltf-model="#wheel" position="0.13 1 -0.163" scale="0.01 0.01 0.01" rotation="0 0 0"></a-entity>
+    <a-box id="accelerator" src="./assets/acc.png" position="-0.289 -0.233 -0.371" rotation="0 0 0" scale="0.4 0.4 0.01"></a-entity>
+    <a-box id="Brake" src="./assets/break.png" position="-0.009 -0.9 -0.371" rotation="0 0 0" scale="0.5 0.5 0.01"></a-entity>
+    </a-scene>
+</body>
+</html>
